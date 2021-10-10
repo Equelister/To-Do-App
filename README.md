@@ -1,37 +1,56 @@
-## Welcome to GitHub Pages
+# ToDo Application
 
-You can use the [editor on GitHub](https://github.com/Equelister/To-Do-App/edit/develop/README.md) to maintain and preview the content for your website in Markdown files.
+Project was created for purpose of college subject as Continuous Integration (CI) and Continuous Deployment (CD) project.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### 
+- [What is it About?](#what-is-it-about?)
+- [About Us](#about-us)
+- [Improvement](#improvement)
+- [Download](#download)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### What is it about?
 
-```markdown
-Syntax highlighted code block
+It is a simple ToDo App written in C# language with ASP NET framework in MVC design pattern.
 
-# Header 1
-## Header 2
-### Header 3
+<a class="" href="">LIVE Website (Not implemented yet)</a>
 
-- Bulleted
-- List
+In order use our site u have to create account for yourself by clicking "Register" in top-right corner of the web.
 
-1. Numbered
-2. List
+After registration you need to log in in similar way as you have registered.
 
-**Bold** and _Italic_ and `Code` text
+Then you will have access to "Tasks" subpage, where all your active/completed tasks will be displayed in two seperate tables.
 
-[Link](url) and ![Image](src)
-```
+You have some options to modify the list:
+- Create new task
+- Edit existing one
+- See details
+- Delete task
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Create and edit options will take you to form for you to fill required fields in order of creation/edition.
 
-### Jekyll Themes
+Clicking at "Details" will show you details about your task.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Equelister/To-Do-App/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Delete button will firstly ask you if you really want to delete selected task and if so it will remove it from database.
 
-### Support or Contact
+### About Us
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+We are students at University of Silesia in Poland. Check out our other projects on our github pages!
+- <a href="https://github.com/xFeew">xFeew</a>
+
+<a href="https://github.com/xFeew">
+ <img src="https://avatars.githubusercontent.com/u/56722498?v=4" alt="xFeew's Avatar" style="width:100px;height:100px;"> 
+</a>
+
+- <a href="https://github.com/Equelister">Equelister</a>
+
+<a href="https://github.com/Equelister">
+ <img src="https://avatars.githubusercontent.com/u/54372462?v=4" alt="Equelister's Avatar" style="width:100px;height:100px;"> 
+</a>
+
+### Improvement
+
+If you want to help us develop this project, feel free to report a bug or send us an idea for improvement with <a class="zip_download_link" style="text-align: center; vertical-align: middle;" href="https://github.com/Equelister/To-Do-App/issues">this link</a>.
+
+### Download
+<a class="zip_download_link" style="text-align: center; vertical-align: middle;" href="https://github.com/Equelister/To-Do-App/archive/refs/heads/main.zip">Download this project as a .zip file</a>
