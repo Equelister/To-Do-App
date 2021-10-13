@@ -11,10 +11,16 @@ namespace ToDoApp.Models
     {
         public int ID { get; set; }
 
+
+     
+
         [Required]
         public string Subject { get; set; }
         
         public string Content { get; set; }
+
+        [DataType(DataType.Upload)]
+        public byte[] ContentFile { get; set; }
 
         public DateTime Insert_Date { get; set; }
 

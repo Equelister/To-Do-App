@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<ToDoApp.Models.TaskModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lista zadań";
 }
 
-<h1>Index</h1>
+<h1>Lista zadań</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Utwórz nowe zadanie</a>
 </p>
 <table class="table">
     <thead>
@@ -17,6 +17,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContentFile)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Task_Date)
@@ -41,6 +44,9 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Content)
+                    </td>  
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContentFile)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Task_Date)
@@ -52,9 +58,9 @@
                         @Html.DisplayFor(modelItem => item.Completed)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edycja</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">Szczegóły</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Usuwanie</a>
                     </td>
                 </tr>
             }
@@ -70,6 +76,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContentFile)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Task_Date)
@@ -88,28 +97,31 @@
         {
             if (item.Completed)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Subject)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Content)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Task_Date)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Location)
-                    </td>
-                    <td style="text-align: center; vertical-align: middle;">
-                        @Html.DisplayFor(modelItem => item.Completed)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.ContentFile)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Task_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td style="text-align: center; vertical-align: middle;">
+                @Html.DisplayFor(modelItem => item.Completed)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edycja</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Szczegóły</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Usuwanie</a>
+            </td>
+        </tr>
             }
         }
     </tbody>
