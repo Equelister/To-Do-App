@@ -1,13 +1,19 @@
 # ToDo Application
 
+[![Build and Test](https://github.com/Equelister/To-Do-App/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Equelister/To-Do-App/actions/workflows/dotnet.yml)
+
 Project was created for purpose of college subject as Continuous Integration (CI) and Continuous Deployment (CD) project.
 
+<br>
 
-### 
-- [What is it About?](#what-is-it-about?)
+### Shortcuts
+
+- [What is it About?](#what-is-it-about)
 - [About Us](#about-us)
 - [Improvement](#improvement)
 - [Download](#download)
+
+<br>
 
 ### What is it about?
 
@@ -33,24 +39,42 @@ Clicking at "Details" will show you details about your task.
 
 Delete button will firstly ask you if you really want to delete selected task and if so it will remove it from database.
 
+<br>
+
 ### About Us
 
 We are students at University of Silesia in Poland. Check out our other projects on our github pages!
-- <a href="https://github.com/xFeew">xFeew</a>
 
-<a href="https://github.com/xFeew">
- <img src="https://avatars.githubusercontent.com/u/56722498?v=4" alt="xFeew's Avatar" style="width:100px;height:100px;"> 
-</a>
+<table align="center">
+  <tr>
+    <th>
+      <a href="https://github.com/xFeew">
+      <img src="https://avatars.githubusercontent.com/u/56722498?v=4" alt="xFeew's Avatar" style="width:100px;height:100px;"> 
+      </a> 
+    </th>
+    <th>
+      <a href="https://github.com/Equelister">
+        <img src="https://avatars.githubusercontent.com/u/54372462?v=4" alt="Equelister's Avatar" style="width:100px;height:100px;"> 
+      </a>
+    </th>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/xFeew">xFeew</a> </td>
+    <td align="center"><a href="https://github.com/Equelister">Equelister</a></td>
+  </tr>
+</table> 
 
-- <a href="https://github.com/Equelister">Equelister</a>
-
-<a href="https://github.com/Equelister">
- <img src="https://avatars.githubusercontent.com/u/54372462?v=4" alt="Equelister's Avatar" style="width:100px;height:100px;"> 
-</a>
+<br>
 
 ### Improvement
 
 If you want to help us develop this project, feel free to report a bug or send us an idea for improvement with <a style="text-align: center; vertical-align: middle;" href="https://github.com/Equelister/To-Do-App/issues">this link</a>.
 
+<br>
+
 ### Download
+
 <a class="zip_download_link" style="text-align: center; vertical-align: middle;" href="https://github.com/Equelister/To-Do-App/archive/refs/heads/main.zip">Download this project as a .zip file</a>
+
+<br><br>
+
