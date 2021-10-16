@@ -1,6 +1,51 @@
-# ToDo Application
+<div align="center" font-size="large">
+  
+   # To Do Application
+</div>
+<table align="center">
+  <tr>
+    <td>
+      Main
+    </td>
+    <td align="center"><br>
 
-[![Build and Test](https://github.com/Equelister/To-Do-App/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Equelister/To-Do-App/actions/workflows/dotnet.yml)
+  ![GitHub repo size](https://github.com/Equelister/To-Do-App/actions/workflows/dotnet.yml/badge.svg?branch=main)
+
+  </td>    
+    <td align="center"><br>
+      
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/equelister/to-do-app/main)    
+    </td>
+  </tr>  
+  <tr>
+    <td>
+      Develop
+    </td>
+    <td align="center"><br>
+
+  ![GitHub repo size](https://github.com/Equelister/To-Do-App/actions/workflows/dotnet.yml/badge.svg?branch=develop)
+
+  </td>    
+    <td align="center"><br>
+      
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/equelister/to-do-app/develop)    
+    </td>
+  </tr>
+    <tr>
+    <td>
+      Repository
+    </td>
+    <td align="center"><br>
+
+  ![Lines of code](https://img.shields.io/tokei/lines/github/equelister/to-do-app)
+
+  </td>    
+    <td align="center"><br>
+      
+![GitHub repo size](https://img.shields.io/github/repo-size/equelister/To-Do-App)  
+    </td>
+  </tr> 
+</table>
 
 Project was created for purpose of college subject as Continuous Integration (CI) and Continuous Deployment (CD) project.
 
@@ -17,7 +62,7 @@ Project was created for purpose of college subject as Continuous Integration (CI
 
 ### What is it about?
 
-It is a simple ToDo App written in C# language with ASP NET framework in MVC design pattern.
+It is a simple To Do App written in C# language with ASP NET framework in MVC design pattern.
 
 <a class="" href="">LIVE Website (Not implemented yet)</a>
 
