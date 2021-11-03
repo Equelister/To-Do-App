@@ -21,13 +21,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Strona główna</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Home"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Polityka prywatności</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">@Localizer["Privacy"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="TaskModels" asp-action="Index">Lista zadań</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="TaskModels" asp-action="Index">@Localizer["ToDoList"]</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -43,7 +43,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - ToDoApp - <i>Szymon Lach & Michał Mazurek </i> - <a asp-area="" asp-controller="Home" asp-action="Privacy">Polityka prywatności</a>
+            &copy; 2021 - ToDoApp - <i>Szymon Lach & Michał Mazurek </i> - <a asp-area="" asp-controller="Home" asp-action="Privacy">@Localizer["Privacy"]</a>
             @await Html.PartialAsync("_SelectLanguagePartial")
         </div>
     </footer>

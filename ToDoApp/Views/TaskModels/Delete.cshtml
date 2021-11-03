@@ -1,12 +1,14 @@
-﻿@model ToDoApp.Models.TaskModel
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+@model ToDoApp.Models.TaskModel
 
 @{
-    ViewData["Title"] = "Usuwanie";
+    ViewData["Title"] = Localizer["DeleteTitle"];
 }
 
-<h1>Usuwanie</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h3>Czy jesteś pewnien, że chcesz usunąć wybrane zadanie?</h3>
+<h3>@Localizer["Confirmation"]</h3>
 <div>
     <h4>Zadanie</h4>
     <hr />
@@ -54,10 +56,10 @@
             @Html.DisplayFor(model => model.Completed)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="ID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> 
-        <a asp-action="Index">Wróć</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index">@Localizer["GoBack"]</a>
     </form>
 </div>
