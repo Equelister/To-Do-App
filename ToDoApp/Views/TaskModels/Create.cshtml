@@ -23,7 +23,7 @@
                 <span asp-validation-for="Content" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input asp-for="Insert_Date" class="form-control" type="hidden"/>
+                <input asp-for="Insert_Date" class="form-control" type="hidden" />
             </div>
             <div class="form-group">
                 <label asp-for="Task_Date" class="control-label"></label>
@@ -35,10 +35,15 @@
                 <input asp-for="Location" class="form-control" />
                 <span asp-validation-for="Location" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="Img" class="control-label"></label>
+                <input asp-for="Img" class="form-control" />
+                <span asp-validation-for="Img" class="text-danger"></span>
+            </div>
             <div class="form-group form-check">
                 <input class="form-check-input" asp-for="Completed" type="hidden" />
             </div>
-         
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

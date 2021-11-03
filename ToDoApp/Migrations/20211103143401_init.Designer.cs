@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ToDoApp.Data;
 
-namespace ToDoApp.Data.Migrations
+namespace ToDoApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211010140409_AddTaskTable")]
-    partial class AddTaskTable
+    [Migration("20211103143401_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -233,6 +233,9 @@ namespace ToDoApp.Data.Migrations
 
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Img")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<DateTime>("Insert_Date")
                         .HasColumnType("datetime2");

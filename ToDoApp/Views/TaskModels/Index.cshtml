@@ -5,7 +5,21 @@
 }
 
 <h1>Index</h1>
+<script type="text/javascript"> 
+    function DisplayImage(imageBytesBase64) {
 
+        console.log(imageBytesBase64);
+
+        var imageBytes = Uint8Array.from(btoa(imageBytesBase64), c => c.charCodeAt(0))
+        console.log(imageBytes);
+
+        var file = new Blob([imageBytes], { type: 'image/jpg' });
+        var fileURL = URL.createObjectURL(file);
+
+        window.open(fileURL);
+    }
+
+</script>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -24,6 +38,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Location)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img)
+            </th>
             <th style="text-align: center; vertical-align: middle;">
                 @Html.DisplayNameFor(model => model.Completed)
             </th>
@@ -35,28 +52,33 @@
         {
             if (item.Completed == false)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Subject)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Content)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Task_Date)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Location)
-                    </td>
-                    <td style="text-align: center; vertical-align: middle;">
-                        @Html.DisplayFor(modelItem => item.Completed)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Task_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                <a href="javascript:void(0);" onclick="DisplayImage('@(Convert.ToBase64String(item.Img) != null ? (byte[])item.Img : new byte[0] )')">LINK</a>
+                <img alt="Embedded Image" src="data:image/jpeg;base64,@Convert.ToBase64String(item.Img)" />
+
+            </td>
+            <td style="text-align: center; vertical-align: middle;">
+                @Html.DisplayFor(modelItem => item.Completed)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
             }
         }
     </tbody>
@@ -77,6 +99,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Location)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img)
+            </th>
             <th style="text-align: center; vertical-align: middle;">
                 @Html.DisplayNameFor(model => model.Completed)
             </th>
@@ -88,28 +113,34 @@
         {
             if (item.Completed)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Subject)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Content)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Task_Date)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Location)
-                    </td>
-                    <td style="text-align: center; vertical-align: middle;">
-                        @Html.DisplayFor(modelItem => item.Completed)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Task_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                <a href="javascript:void(0);" onclick="DisplayImage('@(Convert.ToBase64String(item.Img) != null ? (byte[])item.Img : new byte[0] )')">LINK</a>
+                <img alt="Embedded Image" src="data:image/jpeg;base64,@Convert.ToBase64String(item.Img)" />
+
+
+            </td>
+            <td style="text-align: center; vertical-align: middle;">
+                @Html.DisplayFor(modelItem => item.Completed)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
             }
         }
     </tbody>

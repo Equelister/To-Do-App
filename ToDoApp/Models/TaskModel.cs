@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -29,5 +30,7 @@ namespace ToDoApp.Models
         public string UserID { get; set; }
 
         public virtual IdentityUser User { get; set; }
+
+        public byte[] Img { get; set; }
     }
 }

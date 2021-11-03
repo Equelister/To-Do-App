@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ToDoApp.Models
 {
-    public class FileOnDatabase : TaskModel
+    public class FileUploadModel : TaskModel
     {
         public byte[] Data { get; set; }
     }

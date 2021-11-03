@@ -38,13 +38,18 @@
                 <input asp-for="Location" class="form-control" />
                 <span asp-validation-for="Location" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="Img" class="control-label"></label>
+                <input asp-for="Img" class="form-control" />
+                <span asp-validation-for="Img" class="text-danger"></span>
+            </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Completed" /> @Html.DisplayNameFor(model => model.Completed)
                 </label>
             </div>
             <div class="form-group">
-                <input asp-for="UserID" class="form-control" type="hidden"/>
+                <input asp-for="UserID" class="form-control" type="hidden" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
