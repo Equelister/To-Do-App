@@ -1,8 +1,11 @@
-﻿@{
-    ViewData["Title"] = "Strona główna";
+﻿
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Home Page"];
 }
 
 <div class="text-center">
+    <p>@Localizer["TestString"]</p>
     <p>spolszczenie v1</p>
-    <img style="position:absolute; vertical-align: middle; max-width:100%;" src="https://ghcdn.rawgit.org/xFeew/files/main/john-404.gif">
+    @*<img style="position:absolute; vertical-align: middle; max-width:100%;" src="https://ghcdn.rawgit.org/xFeew/files/main/john-404.gif">*@
 </div>

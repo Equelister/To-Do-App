@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ToDoApp.Models
+namespace ToDoApp.Resources
 {
-    public class FileOnDatabaseModel : FileModel
+    public class SharedResources
     {
-        public byte[] Data { get; set; }
     }
 }
