@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ToDoApp.Data;
 
-namespace ToDoApp.Migrations
+namespace ToDoApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211020182326_Init2")]
+    partial class Init2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -219,6 +221,47 @@ namespace ToDoApp.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("ToDoApp.Models.FileModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Extension")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FileType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UploadedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("taskId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("taskId");
+
+                    b.ToTable("FileModel");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("FileModel");
+                });
+
             modelBuilder.Entity("ToDoApp.Models.TaskModel", b =>
                 {
                     b.Property<int>("ID")
@@ -231,9 +274,6 @@ namespace ToDoApp.Migrations
 
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte[]>("Image")
-                        .HasColumnType("varbinary(max)");
 
                     b.Property<DateTime>("Insert_Date")
                         .HasColumnType("datetime2");
@@ -258,6 +298,26 @@ namespace ToDoApp.Migrations
                     b.ToTable("TaskModel");
                 });
 
+            modelBuilder.Entity("ToDoApp.Models.FileOnDatabaseModel", b =>
+                {
+                    b.HasBaseType("ToDoApp.Models.FileModel");
+
+                    b.Property<byte[]>("Data")
+                        .HasColumnType("varbinary(max)");
+
+                    b.HasDiscriminator().HasValue("FileOnDatabaseModel");
+                });
+
+            modelBuilder.Entity("ToDoApp.Models.FileOnFileSystemModel", b =>
+                {
+                    b.HasBaseType("ToDoApp.Models.FileModel");
+
+                    b.Property<string>("FilePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("FileOnFileSystemModel");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -276,12 +336,12 @@ namespace ToDoApp.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade) 
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -309,6 +369,17 @@ namespace ToDoApp.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ToDoApp.Models.FileModel", b =>
+                {
+                    b.HasOne("ToDoApp.Models.TaskModel", "task")
+                        .WithMany("ContentFile")
+                        .HasForeignKey("taskId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("task");
+                });
+
             modelBuilder.Entity("ToDoApp.Models.TaskModel", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
@@ -316,6 +387,11 @@ namespace ToDoApp.Migrations
                         .HasForeignKey("UserID");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ToDoApp.Models.TaskModel", b =>
+                {
+                    b.Navigation("ContentFile");
                 });
 #pragma warning restore 612, 618
         }
