@@ -83,7 +83,7 @@ namespace ToDoApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Subject,Content,Insert_Date,Task_Date,Location,Img,Completed,UserID")] TaskModel taskModel, IFormFile Image)
+        public async Task<IActionResult> Create([Bind("ID,Subject,Content,Insert_Date,Task_Date,Location,Image,Completed,UserID")] TaskModel taskModel, IFormFile Image)
         {
             var userID = await _context.Users
                            .Where(m => m.Email.Equals(User.Identity.Name))
@@ -111,7 +111,7 @@ namespace ToDoApp.Controllers
                             fs1.CopyTo(ms1);
                             p1 = ms1.ToArray();
                         }
-                        taskModel.Img = p1;
+                        taskModel.Image = p1;
 
                     }
                 }

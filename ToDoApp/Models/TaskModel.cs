@@ -30,7 +30,7 @@ namespace ToDoApp.Models
         public string UserID { get; set; }
 
         public virtual IdentityUser User { get; set; }
-
-        public byte[] Img { get; set; }
+        [DataType(DataType.Upload)]
+        public byte[] Image { get; set; }
     }
 }

@@ -232,7 +232,7 @@ namespace ToDoApp.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("Img")
+                    b.Property<byte[]>("Image")
                         .HasColumnType("varbinary(max)");
 
                     b.Property<DateTime>("Insert_Date")
