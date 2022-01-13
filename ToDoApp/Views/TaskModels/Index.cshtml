@@ -8,18 +8,6 @@
 
 <h1>@ViewData["Title"]</h1>
 
-        console.log(imageBytesBase64);
-
-        var imageBytes = Uint8Array.from(btoa(imageBytesBase64), c => c.charCodeAt(0))
-        console.log(imageBytes);
-
-        var file = new Blob([imageBytes], { type: 'image/jpg' });
-        var fileURL = URL.createObjectURL(file);
-
-        window.open(fileURL);
-    }
-
-</script>
 <p>
     <a asp-action="Create">@Localizer["NewTask"]</a>
 </p>
@@ -125,9 +113,6 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Content)
                     </td>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ContentFile)
-                    </th>
                     <td>
                         @Html.DisplayFor(modelItem => item.Task_Date)
                     </td>
