@@ -13,17 +13,12 @@ namespace ToDoApp.Models
     {
         public int ID { get; set; }
 
-
-
-
         [DisplayName("Tytuł")]
         [Required]
         public string Subject { get; set; }
         [DisplayName("Zawartość")]
         public string Content { get; set; }
-        [DisplayName("Plik")]
-        [DataType(DataType.Upload)]
-        public byte[] ContentFile { get; set; }
+
         [DisplayName("Data")]
         public DateTime Insert_Date { get; set; }
         [DisplayName("Data")]
