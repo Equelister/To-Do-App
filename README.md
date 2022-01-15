@@ -53,7 +53,7 @@ Project was created for purpose of college subject as Continuous Integration (CI
 
 <br>
 
-### Shortcuts
+## Shortcuts
 
 - [What is it About?](#what-is-it-about)
 - [About Us](#about-us)
@@ -63,7 +63,7 @@ Project was created for purpose of college subject as Continuous Integration (CI
 
 <br>
 
-### What is it about?
+## What is it about?
 
 It is a simple To Do App written in C# language with ASP NET framework in MVC design pattern.
 
@@ -89,7 +89,7 @@ Delete button will firstly ask you if you really want to delete selected task an
 
 <br>
 
-### About Us
+## About Us
 
 We are students at University of Silesia in Poland. Check out our other projects on our github pages!
 
@@ -129,7 +129,7 @@ en | English (English) | ✔ | [Szymon Lach](https://github.com/xFeew)
 pl | Polski (Polish) | ✔ | [Szymon Lach](https://github.com/xFeew)
 
 
-### Download
+## Download
 
 <a class="zip_download_link" style="text-align: center; vertical-align: middle;" href="https://github.com/Equelister/To-Do-App/archive/refs/heads/main.zip">Download this project as a .zip file</a>
 
