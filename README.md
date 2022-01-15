@@ -46,7 +46,9 @@
     </td>
   </tr> 
 </table>
-
+<p align="center">
+	      <img src="https://img.shields.io/github/v/tag/Equelister/To-Do-App?label=version&style=flat-square" />
+</p>
 Project was created for purpose of college subject as Continuous Integration (CI) and Continuous Deployment (CD) project.
 
 <br>
@@ -56,6 +58,7 @@ Project was created for purpose of college subject as Continuous Integration (CI
 - [What is it About?](#what-is-it-about)
 - [About Us](#about-us)
 - [Improvement](#improvement)
+- [Localization](#localization)
 - [Download](#download)
 
 <br>
@@ -115,7 +118,16 @@ We are students at University of Silesia in Poland. Check out our other projects
 
 If you want to help us develop this project, feel free to report a bug or send us an idea for improvement with <a style="text-align: center; vertical-align: middle;" href="https://github.com/Equelister/To-Do-App/issues">this link</a>.
 
-<br>
+
+### Localization
+
+You can help translate resource files **app** directories from English to other languages.
+
+Locale | Language | Status | Contributor 
+:----- | :------- | :----- | :-----------
+en | English (English) | ✔ | [Szymon Lach](https://github.com/xFeew)
+pl | Polski (Polish) | ✔ | [Szymon Lach](https://github.com/xFeew)
+
 
 ### Download
 
