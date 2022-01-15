@@ -42,11 +42,12 @@ namespace ToDoApp.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             var taskModel = await _context.TaskModel
                 .FirstOrDefaultAsync(m => m.ID == id);
+
             var userID = await _context.Users
                  .Where(m => m.Email.Equals(User.Identity.Name))
                  .Select(m => m.Id)
@@ -54,7 +55,7 @@ namespace ToDoApp.Controllers
 
             if (taskModel == null || taskModel.UserID != userID)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             return View(taskModel);
@@ -63,10 +64,13 @@ namespace ToDoApp.Controllers
         // GET: TaskModels/Create
         public IActionResult Create()
         {
+            var dateNow = DateTime.Now.ToLocalTime();
+            dateNow = dateNow.AddMilliseconds(-dateNow.Millisecond);
+
             TaskModel taskModel = new TaskModel
             {
-                Insert_Date = DateTime.Parse(DateTime.Now.ToString("MM.dd.yyyy HH:mm")),
-            Task_Date = System.DateTime.Parse(DateTime.Now.ToString("MM.dd.yyyy HH:mm"))
+                Insert_Date = dateNow,
+                Task_Date = dateNow
             };
 
             return View(taskModel);
@@ -85,7 +89,6 @@ namespace ToDoApp.Controllers
                            .SingleOrDefaultAsync();
 
             taskModel.Completed = false;
-            //taskModel.Insert_Date = DateTime.Parse(DateTime.Now.ToString("MM.dd.yyyy HH:mm"));
             taskModel.UserID = userID;
 
             if (ModelState.IsValid)
