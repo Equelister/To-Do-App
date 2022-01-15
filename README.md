@@ -114,12 +114,12 @@ We are students at University of Silesia in Poland. Check out our other projects
 
 <br>
 
-### Improvement
+## Improvement
 
 If you want to help us develop this project, feel free to report a bug or send us an idea for improvement with <a style="text-align: center; vertical-align: middle;" href="https://github.com/Equelister/To-Do-App/issues">this link</a>.
 
 
-### Localization
+## Localization
 
 You can help translate resource files **app** directories from English to other languages.
 
