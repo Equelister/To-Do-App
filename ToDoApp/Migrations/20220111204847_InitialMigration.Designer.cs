@@ -10,8 +10,8 @@ using ToDoApp.Data;
 namespace ToDoApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220115120237_Initial")]
-    partial class Initial
+    [Migration("20220111204847_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -233,6 +233,12 @@ namespace ToDoApp.Migrations
 
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("ContentFile")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<DateTime>("Insert_Date")
                         .HasColumnType("datetime2");

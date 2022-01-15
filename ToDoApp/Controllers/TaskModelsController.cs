@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -81,7 +83,7 @@ namespace ToDoApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Subject,Content,Insert_Date,Task_Date,Location,Completed,UserID")] TaskModel taskModel)
+        public async Task<IActionResult> Create([Bind("ID,Subject,Content,Insert_Date,Task_Date,Location,Image,Completed,UserID")] TaskModel taskModel, IFormFile Image)
         {
             var userID = await _context.Users
                            .Where(m => m.Email.Equals(User.Identity.Name))
@@ -93,6 +95,27 @@ namespace ToDoApp.Controllers
 
             if (ModelState.IsValid)
             {
+                if (Image != null)
+
+                {
+                    if (Image.Length > 0)
+
+                    //Convert Image to byte and save to database
+
+                    {
+
+                        byte[] p1 = null;
+                        using (var fs1 = Image.OpenReadStream())
+                        using (var ms1 = new MemoryStream())
+                        {
+                            fs1.CopyTo(ms1);
+                            p1 = ms1.ToArray();
+                        }
+                        taskModel.Image = p1;
+
+                    }
+                }
+
                 _context.Add(taskModel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
